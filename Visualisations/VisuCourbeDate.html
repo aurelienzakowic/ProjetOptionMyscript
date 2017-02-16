@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+.node {
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
+.link {
+  fill: none;
+  stroke: #bbb;
+}
+
+
+</style>
+
+
+<script type="text/javascript" src="d3.js"></script>
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+<script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
+
+<div id="container" style="width: 700px; height: 700px; margin: 0 auto">
+</div>
+
+
+<script>
+
+
+//key = date   , valeur = nombre d'exercices postes ce jour
+var MapDates = new Map();
+	
+d3.json("index.json", function(error, graph) {
+    if (error) throw error;
+	
+	graph.forEach(function(post) {
+		
+		
+		
+		var date = post.dateexo;
+		
+		
+		
+		if (!MapDates.has(date)) {
+			MapDates.set(date, 1);
+		} else {
+			MapDates.set(date, MapDates.get(date)+1);
+		}
+		
+	
+	});
+
+
+
+
+var DatesArr = [];
+var NbreExoArr =[];
+
+for (var [key, valeur] of MapDates) {
+
+
+	DatesArr.push(key);
+
+	NbreExoArr.push(valeur);
+}
+
+
+
+
+
+Highcharts.chart('container', {
+
+	title: {
+		text : 'To Finish'
+	},
+    xAxis: {
+        categories : DatesArr
+    },
+	
+	plotOptions: {
+		enableMouseTracking : true
+	},
+
+
+    series: [ {name : 'Nombre' ,
+				data : NbreExoArr
+				}
+				]
+
+
+});
+});
+
+
+</script>

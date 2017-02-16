@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+.node {
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
+.link {
+  fill: none;
+  stroke: #bbb;
+}
+
+
+</style>
+
+
+<script type="text/javascript" src="d3.js"></script>
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+<script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
+
+<div id="container" style="width: 700px; height: 700px; margin: 0 auto">
+</div>
+
+
+<script>
+
+
+
+// key = idexo   , valeur = [nbrereussites, nbrefails]
+var MapExo = new Map();
+
+
+//key = date   , valeur = nombre d'exercices postes ce jour
+var MapDates = new Map();
+	
+d3.json("index.json", function(error, graph) {
+    if (error) throw error;
+	
+	graph.forEach(function(post) {
+		
+		var idexo = post.idexo;
+		
+		if (!MapExo.has(idexo)) {
+			if (post.reponse=="faux") {
+				MapExo.set(idexo, [0, 1]);
+			} else {
+				MapExo.set(idexo, [1, 0]);
+			}
+			
+		}else {
+			var current = MapExo.get(idexo);
+			if (post.reponse=="faux") {
+				MapExo.set(idexo, [current[0], current[1]+1]);
+			} else {
+				MapExo.set(idexo, [current[0]+1, current[1]]);
+			}
+		}
+		
+		
+		
+		
+		var date = post.dateexo;
+		
+		if (!MapDates.has(date)) {
+			MapDates.set(date, 1);
+		} else {
+			MapDates.set(date, MapDates.get(date)+1);
+		}
+		
+	
+	});
+	
+	
+	
+	
+
+
+Highcharts.chart('container', {
+
+    chart: {
+        type: 'solidgauge',
+        marginTop: 50
+    },
+
+    title: {
+        text: 'Pourcentages de réussite des exercices',
+        style: {
+            fontSize: '24px'
+        }
+    },
+
+    tooltip: {
+        borderWidth: 0,
+        backgroundColor: 'none',
+        shadow: false,
+        style: {
+            fontSize: '16px'
+        },
+        pointFormat: '{series.name}<br><span style="font-size:2em; color: {point.color}; font-weight: bold">{point.y}%</span>',
+        positioner: function (labelWidth) {
+            return {
+                x: 350 - labelWidth / 2,
+                y: 330
+            };
+        }
+    },
+
+    pane: {
+        startAngle: 0,
+        endAngle: 360,
+        background: [{ // Track for Ex1
+            outerRadius: '116%',
+            innerRadius: '101%',
+            backgroundColor: Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0.3).get(),
+            borderWidth: 0
+        }, { // Track for Ex2
+            outerRadius: '100%',
+            innerRadius: '85%',
+            backgroundColor: Highcharts.Color(Highcharts.getOptions().colors[1]).setOpacity(0.3).get(),
+            borderWidth: 0
+        },{ // Track for Ex3
+            outerRadius: '84%',
+            innerRadius: '70%',
+            backgroundColor: Highcharts.Color(Highcharts.getOptions().colors[2]).setOpacity(0.3).get(),
+            borderWidth: 0
+        },{ // Track for Ex4
+            outerRadius: '69%',
+            innerRadius: '54%',
+            backgroundColor: Highcharts.Color(Highcharts.getOptions().colors[3]).setOpacity(0.3).get(),
+            borderWidth: 0
+        }, { // Track for Ex5
+            outerRadius: '53%',
+            innerRadius: '38%',
+            backgroundColor: Highcharts.Color(Highcharts.getOptions().colors[4]).setOpacity(0.3).get(),
+            borderWidth: 0
+        }]
+    },
+
+    yAxis: {
+        min: 0,
+        max: 100,
+        lineWidth: 0,
+        tickPositions: []
+    },
+
+    plotOptions: {
+        solidgauge: {
+            dataLabels: {
+                enabled: false
+            },
+            linecap: 'round',
+            stickyTracking: false,
+            rounded: true
+        }
+    },
+
+    series: [{
+        name: 'Exercice1',
+        borderColor: Highcharts.getOptions().colors[0],
+        data: [{
+            color: Highcharts.getOptions().colors[0],
+            radius: '116%',
+            innerRadius: '101%',
+            y: Math.round(MapExo.get("0")[0]/(MapExo.get("0")[0]+MapExo.get("0")[1])*100)
+        }]
+    }, {
+        name: 'Exercice2',
+        borderColor: Highcharts.getOptions().colors[1],
+        data: [{
+            color: Highcharts.getOptions().colors[1],
+            radius: '100%',
+            innerRadius: '85%',
+            y: Math.round(MapExo.get("1")[0]/(MapExo.get("1")[0]+MapExo.get("1")[1])*100)
+        }]
+    }, {
+        name: 'Exercice4',
+        borderColor: Highcharts.getOptions().colors[3],
+        data: [{
+            color: Highcharts.getOptions().colors[3],
+            radius: '69%',
+            innerRadius: '54%',
+            y: Math.round(MapExo.get("3")[0]/(MapExo.get("3")[0]+MapExo.get("3")[1])*100)
+        }]
+    },{
+        name: 'Exercice5',
+        borderColor: Highcharts.getOptions().colors[4],
+        data: [{
+            color: Highcharts.getOptions().colors[4],
+            radius: '53%',
+            innerRadius: '38%',
+            y: Math.round(MapExo.get("4")[0]/(MapExo.get("4")[0]+MapExo.get("4")[1])*100)
+        }]
+    },{
+        name: 'Exercice3',
+        borderColor: Highcharts.getOptions().colors[2],
+        data: [{
+            color: Highcharts.getOptions().colors[2],
+            radius: '84%',
+            innerRadius: '70%',
+            y: Math.round(MapExo.get("2")[0]/(MapExo.get("2")[0]+MapExo.get("2")[1])*100)
+        }]
+    }]
+}
+
+/**
+ * In the chart load callback, add icons on top of the circular shapes
+ */
+);
+
+
+var DatesArr = MapDates.keys();
+var NbreExoArr = MapDates.values();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+
+	
+	
+	});
+</script>
+
+
