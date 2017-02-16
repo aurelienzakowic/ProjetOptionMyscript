@@ -74,12 +74,12 @@ public class Enonce1Fragment extends AbstractFragment implements
         Exercice e2 = new Exercice("Exercice 2 \n \n" + "Pascal possède 7 autocollants, Julien en a 14 et Sonia a 11 autocollants.\n \n" +
                 "Combien d'autocollants ont-ils à tous les trois ?","7+14+11=32",3,1);
         Exercice e3 = new Exercice("Exercice 3 \n \n" + "Jones est allé en récréation avec 8 billes. À la fin de la récréation, il a gagné 3 billes.\n \n" +
-                "Combien en a-t-il maintenant ?","8+3=11",3,3);
+                "Combien en a-t-il maintenant ?","8+3=11",3,2);
         Exercice e4 = new Exercice("Exercice 4 \n \n" + "Coralie a 10 euros dans sa poche.\n" +
                 "son père lui donne 5 euros.\n \n" +
-                "Combien d'euros a-t-elle maintenant ?.","10+5=15",3,4);
+                "Combien d'euros a-t-elle maintenant ?.","10+5=15",3,3);
         Exercice e5 = new Exercice("Exercice 5 \n \n" + "Aurélie a 12 ans. Sa sœur, Sophie, a 5 ans de moins qu'elle.\n \n" +
-                "Quel âge a Sophie ?","12-5=7",3,5);
+                "Quel âge a Sophie ?","12-5=7",3,4);
 
         exercices.add(e1);
         exercices.add(e2);
