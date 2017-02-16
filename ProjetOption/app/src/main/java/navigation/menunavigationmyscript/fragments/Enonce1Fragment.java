@@ -177,7 +177,7 @@ public class Enonce1Fragment extends AbstractFragment implements
         }
 
         //Recuperation de la date
-        SimpleDateFormat sdf = new SimpleDateFormat("yy-MM-dd");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         String currentDate = sdf.format(new Date());
 
         //Creation du JSON a envoyer
