@@ -1,0 +1,20 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="navigation.menunavigationmyscript.activity.MainActivity">
+
+    <item android:id="@+id/fragment1"
+        android:title="@string/fragment1"
+        android:orderInCategory="100"
+        app:showAsAction="never"/>
+
+    <item android:id="@+id/fragment2"
+        android:title="@string/fragment2"
+        android:orderInCategory="100"
+        app:showAsAction="never"/>
+
+    <item android:id="@+id/action_terminate"
+        android:title="@string/action_terminate"
+        android:orderInCategory="100"
+        app:showAsAction="never"/>
+</menu>

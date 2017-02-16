@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+  <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textAppearance="?android:attr/textAppearanceLarge"
+    android:text="@string/titre_ecran_accueil"
+    android:id="@+id/textViewTitreVue1"
+    android:layout_marginTop="49dp"
+    android:textSize="50sp"
+    android:layout_gravity="center|left"
+    android:layout_alignParentTop="true"
+    android:layout_centerHorizontal="true"/>
+
+  <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/txt_nom"
+    android:id="@+id/textView1"
+    android:layout_below="@+id/textViewTitreVue1"
+    android:layout_alignParentLeft="true"
+    android:layout_marginLeft="50dp"
+    android:layout_marginTop="50dp"
+    android:textSize="30sp"/>
+
+  <EditText
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/editTextNom"
+    android:minWidth="200dp"
+    android:layout_toRightOf="@+id/textView1"
+    android:layout_marginLeft="60dp"
+    android:layout_alignBottom="@+id/textView1"
+    android:inputType="textCapCharacters"/>
+
+  <Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/btn_valider"
+    android:id="@+id/buttonValider"
+    android:layout_alignBottom="@+id/editTextNom"
+    android:layout_toRightOf="@+id/editTextNom"
+    android:textSize="30sp"
+    android:layout_marginLeft="60dp"/>
+
+</RelativeLayout>
