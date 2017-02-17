@@ -17,5 +17,10 @@ de regles et utilise les methodes traditionnelles (que nous avons donc implement
 - DELETE : pour la suppression des donnees
 Notre serveur est deploye sur un cloud, nous utilisons le service **Heroku**. 
 
-Cote base de donnees, nous utilisons MongoDB, qui est un SGBD de type NoSQL. Les bases de donnees Mongo reposent sur des collections de documents au format JSON et sont particulierement adaptees a notre cas, etant donne que la donnee produite par notre application est au format JSON. La base de donnees Mongo est hebergee par le service MLab.
+Cote base de donnees, nous utilisons MongoDB, qui est un SGBD de type NoSQL. Les bases de donnees Mongo reposent sur des collections de documents au format JSON et sont particulierement adaptees a notre cas, etant donne que la donnee produite par notre application est au format JSON. La base de donnees Mongo est hebergee par le service **MLab**.
 Nous allons expliquer dans l’exemple ci-dessous le fonctionnement de cette architecture client-serveur.
+
+### Module d analyse et de visualisation de donnees
+Afin de valoriser les données collectées, nous avons décidé de mettre en pratique nos cours de visualisation de données et réalisant deux visualisations. Ces visualisations s’appuient chacune sur une collecte JSON de la base puis sur un script javascript utilisant une bibliothèque externe.
+Comme visualisation, nous avons retenu une représentation des pourcentages de bonnes réponses pour chaque exercice afin de pouvoir équilibrer au besoin la difficultée des exercices.
+Nous avons aussi réalisé une courbe représentant le volume de POST journalier afin d’évaluer l’activité de l’application.
