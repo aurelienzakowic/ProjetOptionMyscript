@@ -1,18 +1,4 @@
-1) dÈcompresser les deux dossiers (libs et MenuNavigationMyscript) dans un dossier
+## Description
 
-2) Ouvrez avec android SDK le projet MenuNavigationMyscript
-
-3) ExÈcutez le projet 
-
-(si cela ne marche pas ‡ cause du certificat, recrÈez un nouveau certificat : 
-l'id de ce certificat est le nom du package dans androidManifest.xml)
-
-
-
-
-Dans ce projet avec les onglets :
-
-1) Aller dans l'onglet "Exercices" afin de consulter les diffÈrents exercices
-
-2) Pour changer d'exercice, appuyer sur changer : on gÈnËre un exercice diffÈrent alÈatoire
-
+Notre application est une application Android intégrant le Math widget développé par MyScript. Elle donne accès à des exercices d’algèbre à résoudre par un utilisateur de niveau école primaire. L’application permet aussi de collecter les données utilisateurs afin de les analyser et de permettre ainsi de produire des informations sur le niveau d’un utilisateur (pour chaque exercice réalisé, le nombre de tentatives, le nombre de réponses fausses et vraies, ou encore l’évolution en fonction du temps du niveau d’un utilisateur). Notre application intègre donc également un serveur et une base de données permettant de traiter cette partie collecte de données.Nous pouvons diviser notre application en 3 grandes parties :3
+- L’application Android intégrant le math widget, les exercices et l’interaction avec l’utilisateur et permettant l’envoie de données utilisateur- Une base de données permettant de stocker les données utilisateurs- Un serveur permettant de faire l’interface entre l’application et la base de données
