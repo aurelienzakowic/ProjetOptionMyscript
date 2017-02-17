@@ -92,6 +92,9 @@ Highcharts.chart('container', {
             fontSize: '24px'
         }
     },
+    credits: {
+        enabled: false
+    },
 
     tooltip: {
         borderWidth: 0,
@@ -159,7 +162,7 @@ Highcharts.chart('container', {
     },
 
     series: [{
-        name: 'Exercice1',
+        name: 'Exercice 1',
         borderColor: Highcharts.getOptions().colors[0],
         data: [{
             color: Highcharts.getOptions().colors[0],
@@ -168,7 +171,7 @@ Highcharts.chart('container', {
             y: Math.round(MapExo.get("0")[0]/(MapExo.get("0")[0]+MapExo.get("0")[1])*100)
         }]
     }, {
-        name: 'Exercice2',
+        name: 'Exercice 2',
         borderColor: Highcharts.getOptions().colors[1],
         data: [{
             color: Highcharts.getOptions().colors[1],
@@ -177,7 +180,7 @@ Highcharts.chart('container', {
             y: Math.round(MapExo.get("1")[0]/(MapExo.get("1")[0]+MapExo.get("1")[1])*100)
         }]
     }, {
-        name: 'Exercice4',
+        name: 'Exercice 4',
         borderColor: Highcharts.getOptions().colors[3],
         data: [{
             color: Highcharts.getOptions().colors[3],
@@ -186,7 +189,7 @@ Highcharts.chart('container', {
             y: Math.round(MapExo.get("3")[0]/(MapExo.get("3")[0]+MapExo.get("3")[1])*100)
         }]
     },{
-        name: 'Exercice5',
+        name: 'Exercice 5',
         borderColor: Highcharts.getOptions().colors[4],
         data: [{
             color: Highcharts.getOptions().colors[4],
@@ -195,7 +198,7 @@ Highcharts.chart('container', {
             y: Math.round(MapExo.get("4")[0]/(MapExo.get("4")[0]+MapExo.get("4")[1])*100)
         }]
     },{
-        name: 'Exercice3',
+        name: 'Exercice 3',
         borderColor: Highcharts.getOptions().colors[2],
         data: [{
             color: Highcharts.getOptions().colors[2],
