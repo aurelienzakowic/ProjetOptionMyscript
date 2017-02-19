@@ -16,7 +16,7 @@ de règles et utilise les méthodes traditionnelles (que nous avons donc impleme
 - PUT : pour la modification des données
 - DELETE : pour la suppression des données
 
-Notre serveur est deployé sur un cloud : pour cela, nous utilisons le service **Heroku**. Côté base de données, nous utilisons MongoDB, qui est un une base de données orientée objet (de type NoSQL). Les bases de données Mongo reposent sur des collections de documents au format JSON et sont particulièrement adaptées a notre cas puisque la donnée produite par notre application est au format JSON. La base de données Mongo est hebergée par le service **MLab**.
+Notre serveur est deployé sur un cloud : pour cela, nous utilisons le service **Heroku**. Afin de stocker les informations, nous utilisons MongoDB, qui est une base de données orientée objet (de type NoSQL). Les bases de données Mongo reposent sur des collections de documents au format JSON et sont particulièrement adaptées à notre cas d'utilisation : en effet, la donnée produite par notre application est au format JSON. Cette base de données est hebergée par le service **MLab**.
 Nous allons expliquer dans l’exemple ci-dessous le fonctionnement de cette architecture client-serveur.
 
 ### Module d'analyse et de visualisation de données
