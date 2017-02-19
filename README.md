@@ -2,12 +2,12 @@
 ### Description de l'application
 Notre application est une application Android intégrant le Math widget développé par MyScript. Elle donne accès a des exercices d'algèbre à résoudre par un utilisateur de niveau école primaire. L'application permet aussi de collecter les données utilisateurs afin de les analyser et de permettre ainsi de produire des informations sur le niveau d'un utilisateur (pour chaque exercice réalisé, le nombre de tentatives, le nombre de réponses fausses et vraies, ou encore l'évolution en fonction du temps du niveau d'un utilisateur). Notre application intègre donc egalement un serveur et une base de données permettant de traiter cette partie collecte de données.
 Nous pouvons diviser notre application en 3 grandes parties :
-- L'application Android integrant le math widget, les exercices et l'interaction avec l utilisateur et permettant l envoie de donnees utilisateur
-- Une base de donnees permettant de stocker les donnees utilisateurs
-- Un serveur permettant de faire l interface entre l application et la base de donnees
+- L'application Android intégrant le math widget, les exercices et l'interaction avec l utilisateur et permettant l'envoie de données utilisateur
+- Une base de données permettant de stocker les données utilisateurs
+- Un serveur permettant de faire l'interface entre l'application et la base de données
 
 ### Presentation des technologies utilisees
-Au niveau de l application **Android** (cote client donc), nous utilisons la bibliotheque **OkHttp** qui
+Au niveau de l'application **Android** (côté client donc), nous utilisons la bibliothèque **OkHttp** qui
 permet d envoyer des donnees en utilisant le protocole HTTP.
 Cote serveur, nous avons developpe une API REST en utilisant **Node.js** et le module **Express** pour permettre l echange de donnees entre l application et la base de donnees. L architecture REST respecte un certain nombre
 de regles et utilise les methodes traditionnelles (que nous avons donc implementees) du protocole HTTP :
