@@ -70,16 +70,14 @@ for (var [key, valeur] of MapDates) {
 
 
 
+
 Highcharts.chart('container', {
 
 	title: {
-		text : 'To Finish'
+		text : 'Courbe des Posts'
 	},
     xAxis: {
         categories : DatesArr
-    },
-    credits: {
-        enabled: false
     },
 	
 	plotOptions: {
@@ -87,7 +85,7 @@ Highcharts.chart('container', {
 	},
 
 
-    series: [ {name : 'Nombre' ,
+    series: [ {name : 'Nombre de Posts' ,
 				data : NbreExoArr
 				}
 				]
